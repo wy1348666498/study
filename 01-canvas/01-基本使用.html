@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--    -->
+    <canvas id="canvas" ></canvas>
+    <script>
+        // 1.获取canvas元素
+        const canvas = document.getElementById('canvas');
+        // 2.设置canvas宽高 注意不要使用style样式设置宽高
+        canvas.width = 500;
+        canvas.height = 500;
+        // 3.获取画笔
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'red';
+        ctx.fillRect(50,50,100,100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    // 1.创建canvas元素
+    const canvas =document.createElement('canvas');
+    canvas.width = 500;
+    canvas.height = 500;
+    document.body.appendChild(canvas);
+
+    // 2.得到 context 对象
+    const ctx = canvas.getContext('2d');
+
+    // 3.绘制直线
+    // 3.1 开始一条路径
+    ctx.beginPath();
+    // 3.2 把路径移动到画布中的指定点，不创建线条 起点
+    ctx.moveTo(50,50);
+    // 3.2 创建从起点到指定点的一条直线 终点
+    ctx.lineTo(300,50);
+    // 3.3 闭合路径
+    // ctx.closePath();
+    // 3.4 设置样式
+    ctx.strokeStyle = 'red'; // 设置或返回用于笔触的颜色
+    ctx.lineWidth = 5; // 设置或返回当前的线条宽度
+    // 3.5 绘制已定义的路径
+    ctx.stroke();
+
+
+    // 4. 绘制折线
+    // 4.1 开始一条路径
+    ctx.beginPath();
+    // 4.2 把路径移动到画布中的指定点，不创建线条 起点
+    ctx.moveTo(10,50);
+    // 4.3 创建从起点到指定点的一条直线 终点
+    ctx.lineTo(50,100);
+    ctx.lineTo(150,150);
+    ctx.lineTo(200,100);
+    // 4.4 闭合路径
+    // ctx.closePath();
+    // 4.5 设置样式
+    ctx.strokeStyle = '#fa9e9e';
+    ctx.lineWidth = 5;
+    // 4.6 绘制已定义的路径
+    ctx.stroke();
+
+    // 5. 绘制闭合的矩形
+    // 5.1 开始一条路径
+    ctx.beginPath();
+    // 5.2 创建矩形路径
+    ctx.lineTo(200,200);
+    ctx.lineTo(300,200);
+    ctx.lineTo(300,300);
+    ctx.lineTo(200,300);
+    // 5.3 闭合路径
+    ctx.closePath();
+    // 5.4 设置样式
+    ctx.fillStyle = 'red';
+    // 5.5 绘制已定义的路径
+    ctx.stroke();
+
+    // 6. 绘制一个填充的矩形
+    ctx.fillRect(300,300,100,100);
+    ctx.fillStyle = 'blue';
+    ctx.stroke();
+
+    // 7. 绘制一个矩形的边框
+    ctx.strokeRect(210,310,100,100);
+    ctx.strokeStyle = 'green';
+    ctx.lineWidth = 8;
+    ctx.stroke();
+  </script>
+</body>
+</html>
