@@ -4,7 +4,36 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    canvas {
+        border: 1px solid #000;
+    }
+</style>
 <body>
+    <script>
+        // 1.创建canvas元素
+        const canvas =document.createElement('canvas');
+        canvas.width = 500;
+        canvas.height = 500;
+        document.body.appendChild(canvas);
 
+        // 2.得到 context 对象
+        const ctx = canvas.getContext('2d');
+
+        // 3.绘制文字
+        ctx.font = '30px Arial';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.direction = 'inherit';
+        // 3.1 绘制填充文字
+        ctx.fillText('Hello World', 20, 50);
+        // 3.2绘制描边文字
+        ctx.strokeText('Hello World',20,100);
+        // 3.3 预测量文本宽度
+        const hwWidth = ctx.measureText('Hello World').width;
+        ctx.fillText(String(hwWidth), 20, 150);
+
+
+    </script>
 </body>
 </html>

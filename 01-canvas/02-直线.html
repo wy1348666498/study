@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+ canvas {
+     border: 1px solid #000;
+ }
+</style>
 <body>
+
   <script>
     // 1.创建canvas元素
     const canvas =document.createElement('canvas');
@@ -59,13 +65,15 @@
     // 5.3 闭合路径
     ctx.closePath();
     // 5.4 设置样式
-    ctx.fillStyle = 'red';
+    ctx.strokeStyle = 'red';
     // 5.5 绘制已定义的路径
     ctx.stroke();
 
     // 6. 绘制一个填充的矩形
-    ctx.fillRect(300,300,100,100);
     ctx.fillStyle = 'blue';
+    ctx.fillRect(300,300,100,100);
+    // 清除指定矩形区域，让清除部分完全透明
+    ctx.clearRect(325,325,50,50)
     ctx.stroke();
 
     // 7. 绘制一个矩形的边框
@@ -73,6 +81,8 @@
     ctx.strokeStyle = 'green';
     ctx.lineWidth = 8;
     ctx.stroke();
+
+
   </script>
 </body>
 </html>
